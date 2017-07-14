@@ -1,28 +1,30 @@
 <?php
 include_once('./inc/header.php');
 $page = isset($_GET['page']) ? $_GET['page'] : "";
-
+?>
+  <?php
 switch ($page) {
     case 'home':
-        include_once('home.php');
+        include_once('./home.php');
         break;
     
     case 'booking':
-        include_once('booking.php');
+        include_once('./booking.php');
         break;
     
     case 'about':
-        include_once('about.php');
+        include_once('./about.php');
         break;
     
     case 'contact':
-        include_once('contact.php');
+        include_once('./contact.php');
         break;
     
     default:
-        include_once('home.php');
+        include_once('./home.php');
         break;
 }
-
+?>
+    <?php
 include_once('./inc/footer.php');
 ?>
