@@ -16,11 +16,13 @@
 <body>
 
   <nav class='menu'>
-    <ul class='menu-ul'>
-      <li class='menu-li'><a href="?page=home">Hem </a></li>
-      <li class='menu-li'><a href="?page=about">Om </a></li>
-      <li class='menu-li'><a href="?page=booking">Bokning </a></li>
-      <li class='menu-li'><a href="?page=contact">Kontakt</a></li>
-      <button type="button"><span class='fa fa-bars'></span></button>
-    </ul>
+    <div class='container-fluid'>
+      <button class='collapse-btn' type="button"><span class='fa fa-bars'></span></button>
+      <ul class='menu-ul' id='menu-drop'>
+        <li class='menu-li'><a href="?page=home">Hem </a></li>
+        <li class='menu-li'><a href="?page=about">Om </a></li>
+        <li class='menu-li'><a href="?page=booking">Bokning </a></li>
+        <li class='menu-li'><a href="?page=contact">Kontakt</a></li>
+      </ul>
+    </div>
   </nav>

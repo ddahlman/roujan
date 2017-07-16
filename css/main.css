@@ -4,6 +4,19 @@ html {
     min-height: 100%;
 }
 
+.menu-li,
+.home-imgtxt {
+    font-family: 'Great Vibes', cursive;
+}
+
+.menu {
+    margin-top: 5px;
+    height: 8vw;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
 .menu-ul {
     display: flex;
     justify-content: space-around;
@@ -12,12 +25,11 @@ html {
 .menu-li {
     list-style: none;
     display: inline-block;
-    font-family: 'Great Vibes', cursive;
 }
 
 .menu-li a {
     color: #d4af37;
-    font-size: 330%;
+    font-size: 6vw;
 }
 
 .menu-li a:hover {
@@ -28,4 +40,61 @@ html {
     height: auto;
 }
 
-@media (max-width: 1030px) {}
+.collapse-btn {
+    display: none;
+    background-color: #fff;
+    color: #d4af37;
+    font-size: 6vw;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.collapse-btn:focus {
+    outline: 0;
+}
+
+.collapse-btn:hover {
+    box-shadow: 1px 1px 8px #a8a8a8;
+    transition: 0.3s;
+}
+
+.collapse-btn:active {
+    box-shadow: inset 1px 1px 8px #a8a8a8;
+}
+
+.fa.fa-bars {
+    display: block;
+}
+
+
+/* ---------------- home.php ------------------- */
+
+.home-imgtxt {
+    position: absolute;
+    color: #cad33b;
+    font-size: 13vw;
+    text-shadow: 2px 2px 10px #000;
+    bottom: 0;
+    z-index: 1;
+}
+
+.roujan-img {
+    position: relative;
+}
+
+.overlay-img {
+    background: url('../img/pool-lykta-3 copy crop.jpg') no-repeat center bottom;
+    background-size: contain;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 1030px) {
+    .collapse-btn {
+        display: block;
+    }
+    .menu-ul {
+        display: none;
+    }
+}
