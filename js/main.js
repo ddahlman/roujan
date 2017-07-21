@@ -1,5 +1,6 @@
 $(document).ready(function () {
     document.querySelector('.collapse-btn').addEventListener('click', () => {
-        document.querySelector('.menu').style.height = '25vw';
+        let menuDrop = document.querySelector('#menu-drop');
+        menuDrop.classList.toggle('responsive');
     });
 });
