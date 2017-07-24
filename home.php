@@ -1,5 +1,10 @@
 <section class='roujan-img'>
   <h1 class='home-imgtxt'>Roujan</h1>
+  <div class='well center-block home-booking'>
+    <h1 class='home-booking-txt'>Sök efter din semester</h1>
+    <input class='form-control' type="text">
+    <button class='btn-search' type="button">spara</button>
+  </div>
   <div class='overlay-img'></div>
   <img class='img-responsive' src="img/pool-lykta-3.jpg" alt="roujan bild">
 </section>
@@ -15,7 +20,7 @@
 <section class='container'>
   <div class='row'>
     <div class='col-md-4'>
-      <img src="img/pool-kruka-test.jpg" class='img-responsive' alt="roujan pool">
+      <img src="img/pool-kruka-test.jpg" class='img-responsive img-rounded' alt="roujan pool">
       <article>
         <header>
           <h2>Första kolumnen</h2>
@@ -27,7 +32,7 @@
       </article>
     </div>
     <div class='col-md-4'>
-      <img src="img/pool-kruka-test.jpg" class='img-responsive' alt="roujan pool">
+      <img src="img/pool-kruka-test.jpg" class='img-responsive img-rounded' alt="roujan pool">
       <article>
         <header>
           <h2>Andra kolumnen</h2>
@@ -39,7 +44,7 @@
       </article>
     </div>
     <div class='col-md-4'>
-      <img src="img/pool-kruka-test.jpg" class='img-responsive' alt="roujan pool">
+      <img src="img/pool-kruka-test.jpg" class='img-responsive img-rounded' alt="roujan pool">
       <article>
         <header>
           <h2>Tredje kolumnen</h2>

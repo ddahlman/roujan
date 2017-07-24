@@ -19,10 +19,13 @@
     <div class='container-fluid'>
       <button class='collapse-btn' type="button"><span class='fa fa-bars'></span></button>
       <ul class='menu-ul' id='menu-drop'>
-        <li class='menu-li'><a href="?page=home">Hem </a></li>
-        <li class='menu-li'><a href="?page=about">Om </a></li>
-        <li class='menu-li'><a href="?page=booking">Bokning </a></li>
-        <li class='menu-li'><a href="?page=contact">Kontakt</a></li>
+        <li class='menu-li'>
+          <a href="?page=home"><img class='crown' src="./font/icons8-Crown-104.png" alt=""></a>
+        </li>
+        <li class='menu-li txt'><a href="?page=home">Hem </a></li>
+        <li class='menu-li txt'><a href="?page=about">Om </a></li>
+        <li class='menu-li txt'><a href="?page=booking">Bokning </a></li>
+        <li class='menu-li txt'><a href="?page=contact">Kontakt</a></li>
       </ul>
     </div>
   </nav>

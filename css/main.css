@@ -10,13 +10,31 @@ html {
 }
 
 .menu {
-    margin: 16px 0 10px 5px;
+    background-color: #ffffff;
+    padding: 5px;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
+.menu-ul {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
 }
 
 .menu-li {
     list-style: none;
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 95px;
+}
+
+.txt {
+    vertical-align: middle;
+}
+
+.crown {
+    height: 4vw;
 }
 
 .menu-li a {
@@ -30,6 +48,12 @@ html {
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     transition: 0.3s;
+}
+
+.menu-li,
+a:focus {
+    outline: 0;
+    text-decoration: none;
 }
 
 .img-responsive {
@@ -67,7 +91,7 @@ html {
 
 .home-imgtxt {
     position: absolute;
-    color: #cad33b;
+    color: #d4af37;
     font-size: 13vw;
     text-shadow: 2px 2px 4px #000;
     bottom: 0;
@@ -86,6 +110,41 @@ html {
     width: 100%;
 }
 
+.well.home-booking {
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.home-booking-txt {
+    font: 4vw 'Great Vibes', cursive;
+}
+
+.btn-search {
+    border-radius: 5px;
+    color: #fff;
+    background-color: #d4af37;
+    border-style: none;
+    margin-top: 5px;
+    padding: 7px 20px 7px 20px;
+}
+
+.btn-search:hover {
+    box-shadow: 1px 1px 8px #333;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+}
+
+.btn-search:active {
+    box-shadow: inset 1px 1px 8px #333;
+}
+
+.btn-search:focus {
+    outline: 0;
+}
+
 @keyframes grow {
     0% {
         display: none;
@@ -102,6 +161,9 @@ html {
     }
 }
 
+
+/* ------------------ footer --------------------- */
+
 footer {
     color: #fff;
     background-color: #333;
@@ -113,6 +175,9 @@ footer {
         display: block;
     }
     .menu-ul .menu-li {
+        display: none;
+    }
+    .crown {
         display: none;
     }
 }
