@@ -2,11 +2,9 @@
 $username = "root";
 $host = "";
 $password = "";
-$db = "roujan";
+$database = "roujan";
 header('Content-Type: application/json');
-/*header('Access-Control-Allow-Methods: GET, POST, PUT');*/
 
-
-$connection = mysqli_connect($dbhost, $dbusername, $dbpassword, $db);
-mysqli_query($connection, "SET NAMES utf8");
+$db = mysqli_connect($host, $username, $password, $database);
+mysqli_query($db, "SET NAMES utf8");
 ?>
