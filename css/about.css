@@ -1,0 +1,54 @@
+ .the-house {
+     margin: 33% 0 10% 0;
+     overflow: hidden;
+ }
+
+ .about-modal {
+     display: none;
+     padding-top: 100px;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     position: fixed;
+     height: 100%;
+     width: 100%;
+     background-color: rgba(0, 0, 0, 0.7);
+     z-index: 1000;
+ }
+
+ .img-gallery {
+     cursor: pointer;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+ }
+
+ .img-gallery:hover {
+     -webkit-transform: scale3d(1.2, 1.2, 1);
+     transform: scale3d(1.2, 1.2, 1);
+ }
+
+ #gallery {
+     width: 80%;
+     margin: auto;
+     z-index: 1001;
+     position: relative;
+     animation: slide 0.4s;
+ }
+
+ @keyframes slide {
+     0% {
+         top: -300px;
+         opacity: 0;
+     }
+     100% {
+         top: 0;
+         opacity: 1;
+     }
+ }
+
+ @media screen and (max-width: 1030px) {
+     .the-house {
+         margin: 10px;
+     }
+ }
