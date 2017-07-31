@@ -33,7 +33,7 @@ $resource = new $class($API->resource_id, $API->request);
 
 # Här anropar vi en metod/funktion i det objekt som skapas med samma namn som den HTTP-metod som anropats, exempelvis GET() eller POST()
 $method = $API->method;
-$resource->$method($API->input, $connection);
+$resource->$method($API->input, $db);
 
 # Här körs metoden/funktionen output() i det objekt vi skapat
 

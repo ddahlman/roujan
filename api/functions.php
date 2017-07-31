@@ -2,8 +2,8 @@
 
 //escapes special characters in a string
 function escape($string) {
-    global $connection;
-    return mysqli_real_escape_string($connection, $string);
+    global $db;
+    return mysqli_real_escape_string($db, $string);
 }
 //checks if the value is a number
 function check_number($number) {

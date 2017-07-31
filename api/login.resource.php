@@ -1,14 +1,14 @@
 <?php
 #
-# Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
+# Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/login
 #
-class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
+class _login extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
     public $id, $name, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
-        # Om vi fått med ett id på resurser (Ex /?/user/15) och det är ett nummer sparar vi det i objektet genom $this->id
+        # Om vi fått med ett id på resurser (Ex /?/login/15) och det är ett nummer sparar vi det i objektet genom $this->id
         if(is_numeric($resource_id))
         $this->id = $resource_id;
         # Vi sparar också det som kommer med i URL:en efter vårt id som en array
@@ -39,16 +39,17 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     }
     
     function POST($input, $db) {
-        $file = $_FILES['files']['tmp_name'];
-        /*takes out the contents out of the file*/
-        $content = escape(file_get_contents($file));
-        /*echo $content;*/
-        $query = "INSERT INTO courses (file, contents)
-        VALUES ('$file','$content')";
+        $username = escape($input['username']);
+        $password = escape($input['password']);
+        
+        $salt = 'MinaFöräldrarsHemIRoujanMåsteHaSäkerhetEllerVadTYckerDu?0243';
+        $password = crypt($password, $salt);
+        
+        $query = "INSERT INTO login (username, password)
+        VALUES ('$username', '$password')";
         
         if(mysqli_query($db, $query)) {
-            $this->content = $content;
-            $this->file = $file;
+            $this->name = $username;
         }
     }
 }
