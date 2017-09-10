@@ -1,0 +1,163 @@
+body,
+html {
+    margin: 0;
+    min-height: 100%;
+}
+
+.menu {
+    background-color: #ffffff;
+    padding: 5px;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu-ul {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+
+.menu-li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 95px;
+}
+
+.txt {
+    vertical-align: middle;
+}
+
+.crown {
+    height: 4vw;
+}
+
+.menu-li a {
+    color: #333;
+    font-size: 4vw;
+}
+
+.menu-li a:hover {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.menu-li,
+a:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+.collapse-btn {
+    display: none;
+    background-color: #fff;
+    font-size: 6vw;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.collapse-btn:focus {
+    outline: 0;
+}
+
+.collapse-btn:hover {
+    box-shadow: 1px 1px 8px #a8a8a8;
+    transition: 0.3s;
+}
+
+.collapse-btn:active {
+    box-shadow: inset 1px 1px 8px #a8a8a8;
+}
+
+.fa.fa-bars {
+    display: block;
+}
+
+#greeting {
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.btn-search {
+    border-radius: 5px;
+    font-size: 2vw;
+    color: #fff;
+    background-color: #d4af37;
+    border-style: none;
+    margin: 15px;
+    padding: 7px 20px 7px 20px;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+
+.btn-search:hover {
+    box-shadow: 1px 1px 8px #333;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+}
+
+.btn-search:active {
+    box-shadow: inset 1px 1px 8px #333;
+}
+
+.btn-search:focus {
+    outline: 0;
+}
+
+.admin-home {
+    margin-top: 10%;
+}
+
+@keyframes grow {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ------------------ footer --------------------- */
+
+footer {
+    color: #fff;
+    background-color: #333;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1030px) {
+    .collapse-btn {
+        display: block;
+    }
+    .menu-ul .menu-li {
+        display: none;
+    }
+    .crown {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .menu-ul.responsive {
+        animation: grow .3s;
+    }
+    .menu-ul.responsive .menu-li {
+        display: block;
+        margin-left: 0;
+    }
+}

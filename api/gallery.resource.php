@@ -2,7 +2,7 @@
 #
 # Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
 #
-class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
+class _gallery extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
     public $id, $name, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas

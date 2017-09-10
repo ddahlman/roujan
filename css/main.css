@@ -56,10 +56,6 @@ a:focus {
     text-decoration: none;
 }
 
-.img-responsive {
-    height: auto;
-}
-
 .collapse-btn {
     display: none;
     background-color: #fff;

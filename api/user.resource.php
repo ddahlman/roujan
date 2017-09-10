@@ -4,7 +4,7 @@
 #
 class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
-    public $id, $firstname, $lastname, $email, $phone, $users, $request;
+    public $id, $name, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
@@ -18,16 +18,16 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     function GET($input, $db){
         if($this->id){ // Om vår URL innehåller ett ID på resursen hämtas bara den usern
             $query = "SELECT *
-            FROM user
+            FROM login
             WHERE id = $this->id";
             
             $result = mysqli_query($db, $query);
             $user = mysqli_fetch_assoc($result);
-            $this->firstname = $user['firstname'];
+            $this->name = $user['username'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
-            FROM user
+            FROM login
             ";
             $result = mysqli_query($db, $query);
             $data = [];
@@ -39,15 +39,17 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     }
     
     function POST($input, $db) {
-        $firstname = escape($input['firstname']);
-        $lastname = escape($input['lastname']);
+        $username = escape($input['username']);
+        $password = escape($input['password']);
         
-        $query = "INSERT INTO user (firstname, lastname)
-        VALUES ('$firstname', '$lastname')";
+        $salt = 'MinaFöräldrarsHemIRoujanMåsteHaSäkerhetEllerVadTYckerDu?0243';
+        $password = crypt($password, $salt);
+        
+        $query = "INSERT INTO login (username, password)
+        VALUES ('$username', '$password')";
         
         if(mysqli_query($db, $query)) {
-            $this->firstname = $firstname;
-            $this->lastname = $lastname;
+            $this->name = $username;
         }
     }
 }

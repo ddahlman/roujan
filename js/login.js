@@ -75,7 +75,7 @@ $(document).ready(function () {
             password: document.getElementById('reg-password').value
         };
 
-        $.post('http://localhost/roujan/api/?/login', reg).then((response) => {
+        $.post('http://localhost/roujan/api/?/user', reg).then((response) => {
 
             let inputs = document.querySelectorAll('.inp');
             [...inputs].map(inp => inp.value = "");

@@ -45,11 +45,24 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         $salt = 'MinaFöräldrarsHemIRoujanMåsteHaSäkerhetEllerVadTYckerDu?0243';
         $password = crypt($password, $salt);
         
-        $query = "INSERT INTO login (username, password)
-        VALUES ('$username', '$password')";
+        $query = "SELECT * FROM login
+        WHERE username = '$username'
+        AND password = '$password'";
         
-        if(mysqli_query($db, $query)) {
-            $this->name = $username;
+        $result = mysqli_query($db, $query);
+        $this->name = $user['username'];
+        $this->id = $user['id'];
+        
+        if (mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            $_SESSION['login_user'] = $user['id'];//sets the key to login_user and the value to $id
+            $this->session = session_id();
         }
     }
+    function DELETE(){
+        session_destroy();
+        if(isset( $_SESSION['login_user'] ))
+        echo "nått gick fel";
+    }
+    
 }

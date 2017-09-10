@@ -1,6 +1,5 @@
 <?php
-include('../inc/admin_meny.php');
-include('modal.php');
+include('../inc/admin_header.php');
 
 ?>
 
