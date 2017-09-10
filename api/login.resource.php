@@ -16,26 +16,7 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
     }
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden GET
     function GET($input, $db){
-        if($this->id){ // Om vår URL innehåller ett ID på resursen hämtas bara den usern
-            $query = "SELECT *
-            FROM login
-            WHERE id = $this->id";
-            
-            $result = mysqli_query($db, $query);
-            $user = mysqli_fetch_assoc($result);
-            $this->name = $user['username'];
-            
-        }else{ // om vår URL inte innehåller ett ID hämtas alla users
-            $query = "SELECT *
-            FROM login
-            ";
-            $result = mysqli_query($db, $query);
-            $data = [];
-            while($row = mysqli_fetch_assoc($result)){
-                $data[] = $row;
-            }
-            $this->users = $data;
-        }
+        $this->id = $_SESSION['login_user'];
     }
     
     function POST($input, $db) {
