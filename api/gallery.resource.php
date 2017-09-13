@@ -4,7 +4,7 @@
 #
 class _gallery extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
-    public $id, $path, $request;
+    public $id, $dir, $request;
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
@@ -39,16 +39,15 @@ class _gallery extends Resource{ // Klassen ärver egenskaper från den generell
     }
     
     function POST($input, $db) {
-        $file = $_FILES['files']['tmp_name'];
-        /*takes out the contents out of the file*/
-        $content = escape(file_get_contents($file));
-        /*echo $content;*/
-        $query = "INSERT INTO courses (file, contents)
-        VALUES ('$file','$content')";
-        
-        if(mysqli_query($db, $query)) {
-            $this->content = $content;
-            $this->file = $file;
+        // loop through the array of files, $key is like index
+        foreach($_FILES['files']['name'] as $key => $file) {
+            $dir = '../img/gallery/' . $file;
+            
+            move_uploaded_file($_FILES['files']['tmp_name'][$key], $dir);
+            $query = "INSERT INTO gallery (dir)
+            VALUES ('$dir')";
+            
+            mysqli_query($db, $query);
         }
     }
 }

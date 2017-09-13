@@ -6,7 +6,7 @@ $(document).ready(function () {
         var formData = new FormData();
         let status = document.querySelector('#status');
         console.log(allFiles.length);
-        var json_arr = JSON.stringify(allFiles);
+
         for (var i = 0; i < allFiles.length; i++) {
             var file = allFiles[i];
 
@@ -14,10 +14,8 @@ $(document).ready(function () {
                 status.innerHTML = 'Filen är för stor!';
                 return;
             }
-
-            formData.append('files', file);
-            console.log(formData);
-            console.log(typeof file);
+            formData.append('files[]', file);
+            console.log(file);
         }
 
         $.ajax({
