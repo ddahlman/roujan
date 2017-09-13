@@ -31,8 +31,8 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         AND password = '$password'";
         
         $result = mysqli_query($db, $query);
-        $this->name = $user['username'];
-        $this->id = $user['id'];
+        /*  $this->name = $user['username'];
+        $this->id = $user['id']; */
         
         if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);

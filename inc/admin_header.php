@@ -10,6 +10,7 @@
   <link rel='stylesheet' href='../font/css/font-awesome.min.css'>
   <link rel='stylesheet' href='../css/bootstrap.min.css'>
   <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Great+Vibes">
+  <link rel='stylesheet' href='../css/admin-about.css'>
   <link rel='stylesheet' href='../css/admin.css'>
 </head>
 

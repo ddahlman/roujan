@@ -35,7 +35,7 @@ html {
 
 .menu-li a {
     color: #333;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 .menu-li a:hover {
@@ -58,6 +58,7 @@ a:focus {
     font-size: 6vw;
     border-style: none;
     border-radius: 5px;
+    margin-top: 3%;
 }
 
 .collapse-btn:focus {
@@ -85,7 +86,7 @@ a:focus {
 
 .btn-search {
     border-radius: 5px;
-    font-size: 2vw;
+    font-size: 75%;
     color: #fff;
     background-color: #d4af37;
     border-style: none;

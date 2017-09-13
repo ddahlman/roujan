@@ -3,8 +3,12 @@ $(document).ready(function () {
     console.log(storage);
     $.get('http://localhost/roujan/api/?/login&token=' + storage)
         .then((response) => {
-            const user = response.users[0].username;
-            $('#user').append(`${user}`);
+            console.log(response);
+            $.get(`http://localhost/roujan/api/?/user/${response.id}`).then((result) => {
+                console.log(result);
+                $('#user').append(`${result.name}`);
+            });
+
         }).fail((jqxhr, status, error) => {
             $('#error2').html(`request failed due to: ${status} and the problem was: ${error}`);
         });

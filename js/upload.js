@@ -22,7 +22,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/markdowntest/api/?/courses",
+            url: "http://localhost/roujan/api/?/gallery",
             data: formData,
             mimeType: "multipart/form-data",
             contentType: false,
