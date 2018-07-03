@@ -4,7 +4,7 @@
 #
 class _gallery extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
-    public $id, $dir, $request;
+    public $id, $headerID, $image, $images, $request;
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
@@ -18,36 +18,41 @@ class _gallery extends Resource{ // Klassen ärver egenskaper från den generell
     function GET($input, $db){
         if($this->id){ // Om vår URL innehåller ett ID på resursen hämtas bara den usern
             $query = "SELECT *
-            FROM login
+            FROM gallery
             WHERE id = $this->id";
             
             $result = mysqli_query($db, $query);
-            $user = mysqli_fetch_assoc($result);
-            $this->name = $user['username'];
+            $image = mysqli_fetch_assoc($result);
+            $this->image = $image['dir'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
-            FROM login
+            FROM gallery
             ";
             $result = mysqli_query($db, $query);
             $data = [];
             while($row = mysqli_fetch_assoc($result)){
                 $data[] = $row;
             }
-            $this->users = $data;
+            $this->images = $data;
         }
     }
     
     function POST($input, $db) {
-        // loop through the array of files, $key is like index
+        // loop through the array of files, $key is like index [0] => bla.jpg
         foreach($_FILES['files']['name'] as $key => $file) {
-            $dir = '../img/gallery/' . $file;
+            /* can't do file_get_contents("php://input") with multipart/formdata */
+            $headerID = escape($_POST['headerID']);
+            /* replacing all different characters with "" */
+            $file = preg_replace("/[^a-zA-Z0-9.]/", "", $file);
             
+            $dir = '../img/gallery/' . $file;
             move_uploaded_file($_FILES['files']['tmp_name'][$key], $dir);
-            $query = "INSERT INTO gallery (dir)
-            VALUES ('$dir')";
+            $query = "INSERT INTO gallery (headerID, dir)
+            VALUES ('$headerID', '$dir')";
             
             mysqli_query($db, $query);
         }
+        
     }
 }

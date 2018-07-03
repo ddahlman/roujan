@@ -1,6 +1,6 @@
 <?php
 $username = "root";
-$host = "";
+$host = "localhost";
 $password = "";
 $database = "roujan";
 header('Content-Type: application/json');
